@@ -15,7 +15,7 @@ export default function TournamentCard({ tournament, user }) {
         >
           <div className="title">
             <h1>{tournament.title}</h1>
-            <h4>Date: {tournament.date}</h4>
+            <h4>Date: {new Date(tournament.date).toLocaleDateString()}</h4>
           </div>
         </div>
       </Link>
