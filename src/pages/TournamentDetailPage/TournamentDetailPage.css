@@ -1,0 +1,14 @@
+.flex {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.flex div {
+  margin: 0 10%;
+  text-align: left;
+}
+
+h1 {
+  text-align: center;
+}

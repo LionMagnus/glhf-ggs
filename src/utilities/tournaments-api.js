@@ -1,15 +1,15 @@
 import sendRequest from "./send-request";
 const BASE_URL = '/api/tournaments';
 
-export async function create(data) {
-    return sendRequest(BASE_URL, 'POST', data)
-}
-
-export async function getAllForUser() {
+export async function index() {
     return sendRequest(BASE_URL)
 }
 
-export async function remove(id) {
+export async function create(data) {
+    return sendRequest(`${BASE_URL}/new`, 'POST', data)
+}
+
+export async function deleteTournament(id) {
     return sendRequest(`${BASE_URL}/${id}`, 'DELETE')
 }
 

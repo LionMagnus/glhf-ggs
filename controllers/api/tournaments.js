@@ -1,22 +1,28 @@
 const Tournament = require('../../models/tournament');
 
 module.exports = {
-  create,
   index,
+  create,
   remove,
   edit
 };
-
-async function create(req, res) {
-  req.body.user = req.user._id;
-  const tournament = await Tournament.create(req.body);
-  res.json(tournament);
-}
 
 async function index(req, res) {
   const tournaments = await Tournament.find({});
   res.json(tournaments);
 };
+
+async function create(req, res) {
+  try {
+    req.body.user = req.user._id;
+    const tournament = await Tournament.create(req.body);
+    tournament.save();
+    res.json(tournament);
+  } catch(err) {
+    console.log(err);
+    res.status(400).json(err);
+  }
+}
 
 async function remove(req, res) {
   await Tournament.findOneAndDelete({_id: req.params.id, user: req.user._id});
@@ -37,5 +43,5 @@ async function edit(req, res) {
       {new: true}
   );
   const tournament = await Tournament.find({user: req.user._id});
-  res.json(tournament)
+  res.json(updatedItem)
 }
