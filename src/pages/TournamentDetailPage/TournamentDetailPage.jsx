@@ -16,7 +16,7 @@ export default function TournamentDetailPage({ tournaments, handleDeleteTourname
       setTournament(tournament);
     }
     getTournament();
-  }, [id, tournament])
+  }, [id, tournaments])
 
   
   
