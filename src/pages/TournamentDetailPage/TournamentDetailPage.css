@@ -12,3 +12,12 @@
 h1 {
   text-align: center;
 }
+
+p {
+  color:whitesmoke;
+}
+
+.detailimg {
+  max-width: 50%;
+  max-height: auto;
+}

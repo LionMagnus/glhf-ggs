@@ -1,3 +1,4 @@
+const { getNextKeyDef } = require('@testing-library/user-event/dist/keyboard/getNextKeyDef');
 const Tournament = require('../../models/tournament');
 
 module.exports = {
@@ -15,6 +16,7 @@ async function index(req, res) {
 async function create(req, res) {
   try {
     req.body.user = req.user._id;
+    req.body.username = req.user.name;
     const tournament = await Tournament.create(req.body);
     tournament.save();
     res.json(tournament);
@@ -31,16 +33,17 @@ async function remove(req, res) {
 }
 
 async function edit(req, res) {
-  const updatedItem = await Tournament.findOneAndUpdate(
+  try {
+    await Tournament.findOneAndUpdate(
       {_id: req.params.id},
-      {
-          title: req.body.title,
-          description: req.body.description,
-          location: req.body.location,
-          date: req.body.date,
-          rules: req.body.rules,
-      },
-      {new: true}
-  );
-  res.json(updatedItem)
+      req.body,
+      )
+      const updatedItem = await Tournament.find({
+        user: req.user._id,
+      })
+    res.json(updatedItem);
+  } catch(err) {
+    console.log(err);
+    res.status(400).json(err);
+  }
 }
