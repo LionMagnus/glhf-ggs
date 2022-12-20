@@ -4,22 +4,26 @@ import './NewTournamentPage.css';
 export default function NewTournamentPage({ addTournament }) {
   const [newTournament, setNewTournament] = useState({});
   
-  function handleAddTournament(evt) {
+  async function handleAddTournament(evt) {
     evt.preventDefault();
-    addTournament(newTournament);
-    setNewTournament({
-      title: "",
-      description: "",
-      location: "",
-      date: new Date(),
-      rules: "",
-      logoUrl: "",
+    try {
+      addTournament(newTournament);
+      setNewTournament({
+        title: "",
+        description: "",
+        location: "",
+        date: new Date(),
+        rules: "",
+        logoUrl: "",
     });
+      } catch {
+        this.setState({ error: 'Failed to create note - Try again'})
+    }
   }
 
   return (
     <>
-      <h1>Add a New Tournament</h1>
+      <h1 className='newtitle'>Add a New Tournament</h1>
       <form onSubmit={handleAddTournament}>
         <label>Title:</label>
         <input
@@ -50,7 +54,7 @@ export default function NewTournamentPage({ addTournament }) {
         <label>Date:</label>
         <input
           name="date"
-          type="date"
+          type="datetime-local"
           value={newTournament.date}
           onChange={(evt) => setNewTournament({ ...newTournament, [evt.target.name]: evt.target.value })}
           required

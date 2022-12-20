@@ -1,0 +1,12 @@
+label {
+  color:white;
+}
+
+.newtitle {
+  color:white;
+}
+
+textarea {
+  min-height: 10em;
+  font-size: 1.5vmin;
+}

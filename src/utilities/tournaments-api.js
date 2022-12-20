@@ -5,8 +5,8 @@ export async function index() {
     return sendRequest(BASE_URL)
 }
 
-export async function create(data) {
-    return sendRequest(`${BASE_URL}/new`, 'POST', data)
+export async function create(tournaments) {
+    return sendRequest(`${BASE_URL}/new`, 'POST', tournaments)
 }
 
 export async function deleteTournament(id) {

@@ -1,12 +1,14 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import './TournamentDetailPage.css';
 
 export default function TournamentDetailPage({ tournaments }) {
   
-  const { tournamentTitle } = useParams();
+  const { id } = useParams();
+  console.log(id);
+  console.log(tournaments);
 
-  const tournament = tournaments.find((t) => t.title === tournamentTitle);
+  const tournament = tournaments.find((t) => t._id === id);
   
   return(
     <>

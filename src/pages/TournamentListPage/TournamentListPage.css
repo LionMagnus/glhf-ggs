@@ -31,7 +31,8 @@ body {
 
 .title {
   margin: 1vw;
-  background-color: rgb(255, 255, 255);
+  background-color: transparent;
+  color: #e74c3c;
   border-radius: 4px;
 }
 

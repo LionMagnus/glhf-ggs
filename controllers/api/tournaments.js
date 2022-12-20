@@ -42,6 +42,5 @@ async function edit(req, res) {
       },
       {new: true}
   );
-  const tournament = await Tournament.find({user: req.user._id});
   res.json(updatedItem)
 }

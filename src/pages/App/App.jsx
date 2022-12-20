@@ -12,7 +12,7 @@ import * as tournamentsAPI from '../../utilities/tournaments-api';
 
 export default function App() {
   const [user, setUser] = useState(getUser());
-  const [tournaments, setTournaments] = useState({});
+  const [tournaments, setTournaments] = useState([]);
 
   useEffect(() => {
     async function getTournaments() {
@@ -41,7 +41,7 @@ export default function App() {
             <Routes>
               {/* Route components in here */}
               <Route path="/tournaments" element={<TournamentListPage tournaments={tournaments} handleDeleteTournament={handleDeleteTournament} />} />
-              <Route path="/tournaments/:id" element={<TournamentDetailPage tournaments={tournaments} />}/>
+              <Route path="/tournaments/:id" element={<TournamentDetailPage tournaments={tournaments} />} />
               <Route path="/tournaments/new" element={<NewTournamentPage tournaments={tournaments} addTournament={addTournament} />} />
             </Routes>
           </>

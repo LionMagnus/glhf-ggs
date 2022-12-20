@@ -18,10 +18,11 @@ export default function NavBar({ user, setUser }) {
         <button className="btn fourth">Tournaments</button>
       </Link>
       <Link className="flex-item" to="/tournaments/new">
-        <button className="btn fourth">Add Tournaments</button>
+        <button className="btn fourth">Add Tournament</button>
       </Link>
-        <span>Welcome, {user.name}</span>
+      <span>Welcome, {user.name} &nbsp;  |  &nbsp;
         <Link to="" onClick={handleLogOut}>Log Out</Link>
+      </span>
       </div>
     </nav>
   );

@@ -6,7 +6,6 @@ const tournamentSchema = new Schema({
     user: {
         type: Schema.Types.ObjectId,
         ref:'User',
-        required: true,
     },
     description: {type: String, default: 'No Description added Yet'},
     location: {type: String, required: true},

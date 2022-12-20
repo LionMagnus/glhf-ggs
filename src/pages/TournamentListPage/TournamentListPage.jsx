@@ -3,10 +3,13 @@ import "./TournamentListPage.css";
 
 export default function TournamentListPage(tournaments) {
   return (
-    <div className="container">
-      {tournaments.map((tournament) => {
-        return <TournamentCard key={tournament.title} tournament={tournament} />;
-      })}
-    </div>
+    <>
+      <h1 className='newtitle'>Tournaments List</h1>
+      <div className="container">
+        {tournaments.tournaments.map((tournament, idx) => {
+          return <TournamentCard tournament={tournament} key={idx} />;
+        })}
+      </div>
+    </>
   );
 }
