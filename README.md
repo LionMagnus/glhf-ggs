@@ -8,7 +8,7 @@
 
 # GLHF.GGS
 
-### [CLICK TO DEMO](https://videogame-music-fest.herokuapp.com/)
+### [CLICK TO DEMO](https://glhf-ggs.herokuapp.com/)
 
 #### Created by Hua Wang
 
