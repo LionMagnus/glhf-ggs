@@ -12,7 +12,7 @@ export default function NavBar({ user, setUser }) {
     <nav>
       <div className="flex-container">
         <img src={'https://cdn-icons-png.flaticon.com/512/2004/2004971.png'} className='flex-item' id='faviconimg' alt=""></img>
-        <Link className="flex-item" to="/about">
+        <Link className="flex-item" to="/">
           <button className="btn fourth">About</button>
         </Link>
         <Link className="flex-item" to="/tournaments">

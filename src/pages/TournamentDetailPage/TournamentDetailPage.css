@@ -9,8 +9,14 @@
   text-align: left;
 }
 
-h1 {
+h1, h2, h3, h4 {
   text-align: center;
+  color: white;
+  text-shadow: #f30909 1px 1px 10px;
+}
+
+h5 {
+  color: white;
   text-shadow: #f30909 1px 1px 10px;
 }
 
@@ -20,6 +26,22 @@ p {
 }
 
 .detailimg {
-  max-width: 50%;
-  max-height: auto;
+  display: block;
+  min-width:50%;
+  max-width:auto;
+  max-height:500px;
+  width: auto;
+  height: auto;
+}
+
+.detailbtn {
+  display: flex;
+  justify-content: center;
+}
+
+.comments {
+  margin-left: 10em;
+  margin-right: 10em;
+  background-color: rgb(6, 6, 78);
+  color:white;
 }

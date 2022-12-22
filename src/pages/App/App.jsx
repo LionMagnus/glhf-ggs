@@ -11,12 +11,10 @@ import NewTournamentPage from '../NewTournamentPage/NewTournamentPage';
 import MyTournamentPage from '../MyTournamentPage/MyTournamentPage';
 import NavBar from '../../components/NavBar/NavBar';
 import * as tournamentsAPI from '../../utilities/tournaments-api';
-/* import * as commentsAPI from '../../utilities/comments-api'; */
 
 export default function App() {
   const [user, setUser] = useState(getUser());
   const [tournaments, setTournaments] = useState([]);
-/*   const [comments, setComments] = useState([]); */
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -53,6 +51,7 @@ export default function App() {
             <NavBar user={user} setUser={setUser} />
             <Routes>
               {/* Route components in here */}
+              <Route path="/" element={<AboutPage />} />
               <Route path="/tournaments" element={<TournamentListPage tournaments={tournaments} />} />
               <Route path="/tournaments/:id" element={<TournamentDetailPage tournaments={tournaments} handleDeleteTournament={handleDeleteTournament} setTournaments={setTournaments} user={user} /* comments={comments} setComments={setComments} */ />} />
               <Route path="/tournaments/edit/:id" element={<TournamentEditPage tournaments={tournaments} handleUpdateTournament={handleUpdateTournament} />} />

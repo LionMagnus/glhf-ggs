@@ -1,0 +1,29 @@
+.aboutimg{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+h3 {
+  margin-left: 20em;
+  margin-right: 20em;
+}
+
+.img1 {
+  margin: 2em;
+  display: block;
+  max-width:auto;
+  max-height:400px;
+  width: auto;
+  height: auto;
+}
+
+.img2 {
+  margin: 2em;
+  display: block;
+  max-width:auto;
+  max-height:400px;
+  width: auto;
+  height: auto;
+}

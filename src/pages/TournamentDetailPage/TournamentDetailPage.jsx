@@ -43,14 +43,19 @@ export default function TournamentDetailPage({ tournaments, handleDeleteTourname
         <p>Time: {new Date(tournament.date).toLocaleTimeString()}</p>
         <p>Location: {tournament.location}</p>
         <p>Organizer: {tournament.username}</p>
-        <h5 className='newtitle'>Rules:</h5>
+        <p>Rules:</p>
         <p>{tournament.rules}</p>
         <p>Participants: {tournament.usersArray.length}</p>
-        <Link to='/tournaments'>
-          <button className="delete-details-btn" onClick={() => handleDeleteTournament(tournament._id)}>Delete</button>
-        </Link>
-        <button className='edit-details-btn' onClick={() => navigate(`/tournaments/edit/${tournament._id}`)}>Edit</button>
-        <button onClick={enterlist}>{tournament.usersArray.includes(user._id) ? 'Leave': 'Enter'}</button>
+        {user._id === tournament.user ?
+          <div className='detailbtn'>
+          <Link to='/tournaments'>
+            <button className="delete-details-btn" onClick={() => handleDeleteTournament(tournament._id)}>Delete</button>
+          </Link>
+          <button className='edit-details-btn' onClick={() => navigate(`/tournaments/edit/${tournament._id}`)}>Edit</button>
+          </div>
+        : <div></div>
+        }
+        <button className='EnterBtn' onClick={enterlist}>{tournament.usersArray.includes(user._id) ? 'Leave': 'Enter'}</button>
         </div>
         <img className='detailimg' src={`${tournament.logoUrl}`} alt="" />
       </div>
@@ -69,7 +74,7 @@ export default function TournamentDetailPage({ tournaments, handleDeleteTourname
         :
         <div>
           {tournament.comments.map((comment, idx) => (
-          <div className='newtitle'>
+          <div className='comments' key={idx}>
             <CommentCard comment={comment} key={idx}/>
           </div>
         ))}

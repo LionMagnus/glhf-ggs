@@ -24,6 +24,7 @@ export default function NewTournamentPage({ addTournament }) {
   return (
     <>
       <h1 className='newtitle'>Add a New Tournament</h1>
+      <div className='form-container'>
       <form onSubmit={handleAddTournament}>
         <label>Title:</label>
         <input
@@ -78,6 +79,7 @@ export default function NewTournamentPage({ addTournament }) {
 
         <button type="submit">Submit</button>
       </form>
+      </div>
     </>
   );
 }

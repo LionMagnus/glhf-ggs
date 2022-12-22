@@ -21,6 +21,7 @@ export default function TournamentEditPage({ tournaments, handleUpdateTournament
   return (
     <>
       <h1 className='newtitle'>Update Tournament</h1>
+      <div className='form-container'>
       <form onSubmit={handleSubmitTournament}>
         <label>Title:</label>
         <input
@@ -75,6 +76,7 @@ export default function TournamentEditPage({ tournaments, handleUpdateTournament
 
         <button type="submit">Submit</button>
       </form>
+      </div>
     </>
   );
 }
