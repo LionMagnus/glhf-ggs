@@ -11,10 +11,12 @@
 
 h1 {
   text-align: center;
+  text-shadow: #f30909 1px 1px 10px;
 }
 
 p {
   color:whitesmoke;
+  text-shadow: #f30909 1px 1px 10px;
 }
 
 .detailimg {

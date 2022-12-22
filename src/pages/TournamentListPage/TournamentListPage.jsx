@@ -1,21 +1,19 @@
 import TournamentCard from "../../components/TournamentCard/TournamentCard";
-import { Link } from 'react-router-dom';
 import "./TournamentListPage.css";
 
 export default function TournamentListPage(tournaments) {
-  console.log(tournaments);
+  
   return (
     <>
       <h1 className='newtitle'>Tournaments List</h1>
+        <div className="container">
         {tournaments.tournaments.length ? tournaments.tournaments.map((tournament, idx) => 
-          <div className="container">
-            <Link to={`/tournaments/${tournament._id}`}>
-              <TournamentCard tournament={tournament} key={idx} />
-            </Link>
-          </div>)
+            <TournamentCard tournament={tournament} key={idx} />
+          )
       :
-      <h3>No Tournaments Yet</h3>
+      <h3 className='newtitle'>No Tournaments Yet</h3>
       }
+      </div>
     </>
   );
 }

@@ -17,7 +17,7 @@ export default function NewTournamentPage({ addTournament }) {
         logoUrl: "",
     });
       } catch {
-        this.setState({ error: 'Failed to create note - Try again'})
+        this.setState({ error: 'Failed to create comment - Try again'})
     }
   }
 

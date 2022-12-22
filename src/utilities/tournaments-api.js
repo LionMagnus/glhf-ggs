@@ -16,3 +16,11 @@ export async function deleteTournament(id) {
 export async function edit(id, updatedTournament) {
     return sendRequest(`${BASE_URL}/edit/${id}`, 'PUT', updatedTournament)
 }
+
+export async function toggleAdd(id) {
+    return sendRequest(BASE_URL, 'POST', {id})
+}
+
+export async function myIndex() {
+    return sendRequest(`${BASE_URL}/mytournaments`)
+}

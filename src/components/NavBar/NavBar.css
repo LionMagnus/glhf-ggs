@@ -44,8 +44,18 @@
 }
 
 span {
-  color: rgb(255, 255, 255);
+  color: #e74c3c;
   font-size: 1.25rem;
   font-weight: 400;
   padding: 1.2em 2.8em;
+  text-shadow: #e01b1b 1px 1px 10px;
+}
+
+#faviconimg {
+  display: block;
+  max-width:80px;
+  max-height:80px;
+  width: auto;
+  height: auto;
+  margin: 10px;
 }
