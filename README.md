@@ -93,8 +93,8 @@ This is the fourth and capstone project in Software Engineer Immersive program a
 
 <details open>
   <summary>Deployed Link to Game</summary>
-  <a href="https://videogame-music-fest.herokuapp.com/"
-    >https://videogame-music-fest.herokuapp.com/</a
+  <a href="https://glhf-ggs.herokuapp.com/"
+    >https://glhf-ggs.herokuapp.com/</a
   >
 </details>
 
